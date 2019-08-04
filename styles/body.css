@@ -1,3 +1,24 @@
 body {
-	background-color: red;
+	background-color: white;
+	font-family: 'Bahianita', cursive;
+}
+.field
+{
+	width: 360px;
+	height: 360px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: aqua;
+	border:5px solid green;
+}
+.excel {
+	width:45px;
+	height: 45px;
+}
+.white {
+	background-color: white;
+}
+.black {
+	background-color: black;
 }
