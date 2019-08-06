@@ -23,9 +23,13 @@ for(let i=0; i<excel.length; i++)
 		x = 1;
 		y--;
 	}
+	excel[i].setAttribute('onclick', 'check(this)');
 	excel[i].setAttribute('posX',leters[x]);
 	excel[i].setAttribute('posY',y);
 	if((x+y)%2 ==0)
-		excel[i].classList.add('black');
+			excel[i].classList.add('black');
+	else
+		excel[i].classList.add('white');
+		excel[i].classList.add('figure_none');
 	x++; 
 }
