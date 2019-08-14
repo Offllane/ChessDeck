@@ -2,23 +2,59 @@ body {
 	background-color: white;
 	font-family: 'Bahianita', cursive;
 }
+
 .field
 {
 	width: 360px;
 	height: 360px;
-	margin: 0 auto;
+	margin-left: 30px;
 	display: flex;
 	flex-wrap: wrap;
 	background-color: aqua;
 	border:5px solid green;
 }
+
 .excel {
 	width:45px;
 	height: 45px;
 }
+
 .white {
 	background-color: #DEB887;
 }
+
 .black {
 	background-color: #8B4513;
+}
+
+button {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	margin-top:380px;
+}
+
+button .symbol {
+	color: black;
+	font-size: 25px;
+}
+
+#endgame {
+	margin-left:270px;
+}
+
+#next {
+	margin-left: 230px;
+}
+
+#go {
+	margin-left: 190px;
+}
+
+#previous {
+	margin-left: 150px;
+}
+
+#startgame {
+	margin-left: 110px;
 }

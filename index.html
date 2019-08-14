@@ -6,13 +6,19 @@
 	<link href="https://fonts.googleapis.com/css?family=Bahianita&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles/body.css">
 	<link rel="stylesheet" type="text/css" href="styles/figure.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-	<script src="scripts/deck.js"></script>
-	<script src="scripts/set.js"></script>
-	<script src="scripts/turns.js"></script>
-	<script src="scripts/move.js"></script>
-	<input type='button' onclick="nextTurn()"><br>
-	This will be chess deck
+	<div class="deck">
+		<script src="scripts/deck.js"></script>
+		<script src="scripts/set.js"></script>
+		<script src="scripts/turns.js"></script>
+		<script src="scripts/move.js"></script>
+		<button id="next" onclick="nextTurn(), clearInterval(refresh)"><span class="symbol fa fa-step-forward"></span></button>
+		<button id ="previous" onclick="previousTurn(), clearInterval(refresh)"><span class="symbol fa fa-step-backward"></span></button>
+		<button id ="go" onclick="startGame()"><span class="symbol fa fa-play"></span></button>
+		<button id="endgame" onclick="goEnd()"><span class="symbol fa fa-fast-forward"></span></button>
+		<button id="startgame" onclick="nextTurn(), clearInterval(refresh)"><span class="symbol fa fa-fast-backward"></span></button>
+	</div>
 </body>
 </html>

@@ -1,11 +1,3 @@
-let counter = 0;
-let	startTurnLetter;
-let startTurnNumber;
-let endTurnLetter;
-let endTurnNumber;
-
-let temp1;
-let temp2;
 
 function check(element)
 {
@@ -39,8 +31,18 @@ function check(element)
 		return('figure_black_castle');
 }
 
-function findFirst()
-{
+let counter = 0;
+let	startTurnLetter;
+let startTurnNumber;
+let endTurnLetter;
+let endTurnNumber;
+
+let temp1;
+let temp2;
+
+let refresh;
+
+function findFirst() {
 	startTurnLetter = takeLetter[counter];
 	startTurnNumber = takeNumber[counter];
 	for(let i=0; i<excel.length; i++)
@@ -62,8 +64,7 @@ function findFirst()
 	}
 }
 
-function findSecond()
-{
+function findSecond() {
 	endTurnLetter = putLetter[counter];
 	endTurnNumber = putNumber[counter];
 	for(let i=0; i<excel.length; i++)
@@ -85,9 +86,73 @@ function findSecond()
 	}
 }
 
+function findReflectionFirst() {
+	startTurnLetter = putLetter[counter];
+	startTurnNumber = putNumber[counter];
+	for(let i=0; i<excel.length; i++)
+	{
+		if (x>8)
+		{
+			x = 1;
+			y--;
+		}
+		let leter = excel[i].getAttribute('posX');
+		let number = excel[i].getAttribute('posY');
+		if(leter == startTurnLetter && number == startTurnNumber)
+		{
+			temp1 = check(excel[i]);
+			excel[i].classList.remove(temp1);
+			excel[i].classList.add(temp2);
+		}
+		x++; 
+	}
+}
+
+function findRedlectionSecond() {
+	endTurnLetter = takeLetter[counter];
+	endTurnNumber = takeNumber[counter];
+	for(let i=0; i<excel.length; i++)
+	{
+		if (x>8)
+		{
+			x = 1;
+			y--;
+		}
+		let leter = excel[i].getAttribute('posX');
+		let number = excel[i].getAttribute('posY');
+		if(leter == endTurnLetter && number == endTurnNumber)
+		{
+			temp2 = check(excel[i]);
+			excel[i].classList.remove(temp2);
+			excel[i].classList.add(temp1);
+		}
+		x++; 
+	}
+}
+
+function previousTurn() {
+	counter--;
+	findReflectionFirst();
+	findRedlectionSecond();
+}
+
+function startGame()
+{
+	findFirst();
+	findSecond();
+	counter++;
+	refresh = setInterval(nextTurn,2000);
+}
+
 function nextTurn()
 {
 	findFirst();
 	findSecond();
 	counter++;
+}
+
+function goEnd() {
+	let allTurns = takeLetter.length;
+	while (counter <= allTurns)
+		nextTurn();
 }
