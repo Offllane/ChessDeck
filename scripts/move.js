@@ -1,4 +1,3 @@
-
 function check(element)
 {
 	if(element.classList.contains('figure_none'))
@@ -37,10 +36,13 @@ let startTurnNumber;
 let endTurnLetter;
 let endTurnNumber;
 
-let temp1;
+
 let temp2;
+let temp1;
 
 let refresh;
+
+let memory = [];
 
 function findFirst() {
 	startTurnLetter = takeLetter[counter];
@@ -79,6 +81,7 @@ function findSecond() {
 		if(leter == endTurnLetter && number == endTurnNumber)
 		{
 			temp2 = check(excel[i]);
+			memory[counter] = temp2;
 			excel[i].classList.remove(temp2);
 			excel[i].classList.add(temp1);
 		}
@@ -102,13 +105,13 @@ function findReflectionFirst() {
 		{
 			temp1 = check(excel[i]);
 			excel[i].classList.remove(temp1);
-			excel[i].classList.add(temp2);
+			excel[i].classList.add(memory[counter]);
 		}
 		x++; 
 	}
 }
 
-function findRedlectionSecond() {
+function findReflectionSecond() {
 	endTurnLetter = takeLetter[counter];
 	endTurnNumber = takeNumber[counter];
 	for(let i=0; i<excel.length; i++)
@@ -130,10 +133,17 @@ function findRedlectionSecond() {
 	}
 }
 
-function previousTurn() {
+function begin()
+{
+	while(counter>0)
+		previousTurn();
+}
+
+function previousTurn()
+{
 	counter--;
 	findReflectionFirst();
-	findRedlectionSecond();
+	findReflectionSecond();
 }
 
 function startGame()
@@ -151,8 +161,11 @@ function nextTurn()
 	counter++;
 }
 
-function goEnd() {
+function goEnd() 
+{
 	let allTurns = takeLetter.length;
 	while (counter <= allTurns)
 		nextTurn();
+	for(let i=0; i<memory.length; i++)
+		console.log(memory[i] + i);
 }
