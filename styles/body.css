@@ -58,3 +58,24 @@ button .symbol {
 #startgame {
 	margin-left: 110px;
 }
+
+.chessturns {
+border: 2px solid black;
+position: fixed;
+margin-left: 420px;
+width:650px;
+height: 365px;
+font-size: 20px;
+padding-left: 20px;
+}
+
+table {
+}
+
+td {
+	padding-left: 5px;
+}
+
+.help {
+	background-color: red;
+}
