@@ -1,18 +1,64 @@
-console.log(document.getElementsByClassName('chessturns'));
-for (let i =0; i<takeLetter.length; i++)
+
+function checkWrite()
 {
-	help = i;
-	if (i==0)
-		document.write('<tr><td id =i>'+takeLetter[i]+takeNumber[i]+'-'+putLetter[i]+putNumber[i]+',</td>');
-	else if (i%5 == 0 && (i+1 != takeLetter.length))
+	if(element.classList.contains('figure_none'))
+		return('figure_none');
+	else if(element.classList.contains('figure_white_pawn'))
+		return ('');
+	else if(element.classList.contains('figure_white_bishop'))
+		return('C');
+	else if(element.classList.contains('figure_white_knight'))
+		return('К');
+	else if(element.classList.contains('figure_white_pawn'))
+		return('');
+	else if(element.classList.contains('figure_white_king'))
+		return('Кр');
+	else if(element.classList.contains('figure_white_queen'))
+		return('Ф');
+	else if(element.classList.contains('figure_white_castle'))
+		return('Л');
+	else if(element.classList.contains('figure_black_bishop'))
+		return('С');
+	else if(element.classList.contains('figure_black_knight'))
+		return('К');
+	else if(element.classList.contains('figure_black_pawn'))
+		return('');
+	else if(element.classList.contains('figure_black_king'))
+		return('Кр');
+	else if(element.classList.contains('figure_black_queen'))
+		return('Ф');
+	else if(element.classList.contains('figure_black_castle'))
+		return('Л');
+}
+
+for (let i = 0, helper = 1; i<takeLetter.length; i++)
+{
+	var span = document.createElement('span');
+	span.className="cell";
+	span.id=i;
+	if ( i ==0 || (i-1)%2 == 1)
 	{
-		document.write('<td>'+takeLetter[i]+takeNumber[i]+'-'+putLetter[i]+putNumber[i]+',</td></tr>');
-		document.write('<tr><td>'+takeLetter[i]+takeNumber[i]+'-'+putLetter[i]+putNumber[i]+',</td>');
+		span.innerHTML='<strong>'+helper+'</strong>' +". ";
+		span.innerHTML+=putLetter[i]+putNumber[i];
+		helper++;
 	}
-	else if(i+1 != takeLetter.length)
-		document.write('<td>'+takeLetter[i]+takeNumber[i]+'-'+putLetter[i]+putNumber[i]+',</td>');
-	else 
-		document.write('<td>'+takeLetter[i]+takeNumber[i]+'-'+putLetter[i]+putNumber[i]+'.</td></tr>');
-	if( i==5 || i==7 || i==10)
-		document.write('<td class="comment">Comment for turn</td>');
+	else
+		span.innerHTML=putLetter[i]+putNumber[i];
+	document.getElementById('field').appendChild(span);
+	if (i == 6 || i == 8)
+		span.innerHTML+=" comments";
+}
+
+goEnd();
+begin();
+
+function changeColor(current)
+{
+	for(let j=0; j<takeLetter.length; j++)
+	{
+		if(j == (current-1) || j == (current+1))
+			document.getElementById(j).classList.remove('position');
+		if(j == current)
+			document.getElementById(j).classList.add('position');
+	}
 }

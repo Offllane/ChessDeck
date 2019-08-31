@@ -1,71 +1,59 @@
 .figure_black_bishop {
 	background-image: url(images/bB.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_black_knight {
 	background-image: url(images/bN.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_black_pawn {
 	background-image: url(images/bP.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_black_king {
 	background-image: url(images/bK.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_black_queen {
 	background-image: url(images/bQ.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_black_castle {
 	background-image: url(images/bR.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_white_bishop {
 	background-image: url(images/wB.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_white_knight {
 	background-image: url(images/wN.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_white_pawn {
 	background-image: url(images/wP.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_white_king {
 	background-image: url(images/wK.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_white_queen {
 	background-image: url(images/wQ.png);
 	background-size: 45px;
-	cursor: pointer;
 }
 
 .figure_white_castle {
 	background-image: url(images/wR.png);
 	background-size: 45px;
-	cursor: pointer;
 }

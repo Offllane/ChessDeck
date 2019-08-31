@@ -44,6 +44,8 @@ let refresh;
 
 let memory = [];
 
+let figure_memory = [];
+
 function findFirst() {
 	startTurnLetter = takeLetter[counter];
 	startTurnNumber = takeNumber[counter];
@@ -59,6 +61,7 @@ function findFirst() {
 		if(leter == startTurnLetter && number == startTurnNumber)
 		{
 			temp1 = check(excel[i]);
+			figure_memory[counter] = temp1;
 			excel[i].classList.remove(temp1);
 			excel[i].classList.add('figure_none');
 		}
@@ -141,7 +144,9 @@ function begin()
 
 function previousTurn()
 {
+	if(counter >= 0)
 	counter--;
+	changeColor(counter);
 	findReflectionFirst();
 	findReflectionSecond();
 }
@@ -150,6 +155,7 @@ function startGame()
 {
 	findFirst();
 	findSecond();
+	changeColor(counter);
 	counter++;
 	refresh = setInterval(nextTurn,2000);
 }
@@ -158,14 +164,13 @@ function nextTurn()
 {
 	findFirst();
 	findSecond();
+	changeColor(counter);
 	counter++;
 }
 
 function goEnd() 
 {
 	let allTurns = takeLetter.length;
-	while (counter <= allTurns)
+	while (counter <= allTurns-1)
 		nextTurn();
-	for(let i=0; i<memory.length; i++)
-		console.log(memory[i] + i);
 }
