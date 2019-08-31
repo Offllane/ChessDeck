@@ -44,8 +44,6 @@ let refresh;
 
 let memory = [];
 
-let figure_memory = [];
-
 function findFirst() {
 	startTurnLetter = takeLetter[counter];
 	startTurnNumber = takeNumber[counter];

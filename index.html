@@ -13,7 +13,6 @@
 		<script src="scripts/deck.js"></script>
 		<script src="scripts/set.js"></script>
 		<script src="scripts/turns.js"></script>
-		<script src="scripts/move.js"></script>
 		<button id="next" onclick="nextTurn(), clearInterval(refresh)"><span class="symbol fa fa-step-forward"></span></button>
 		<button id ="previous" onclick="previousTurn(), clearInterval(refresh)"><span class="symbol fa fa-step-backward"></span></button>
 		<button id ="go" onclick="startGame()"><span class="symbol fa fa-play"></span></button>
@@ -22,8 +21,10 @@
 		<div class="chessturns" id="turns">
 			<div id='field'>				
 			</div>
+			<script src="scripts/move.js"></script>
 			<script src="scripts/writeTurns.js"></script>
 		</div>
 	</div>
+	<script src="scripts/keyboard.js"></script>
 </body>
 </html>
