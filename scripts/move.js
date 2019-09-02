@@ -172,3 +172,16 @@ function goEnd()
 	while (counter <= allTurns-1)
 		nextTurn();
 }
+
+function GoToTurn (goingPosition) {
+if(goingPosition <= counter)
+{
+	while (goingPosition<=counter)
+		previousTurn();
+}
+if(goingPosition>=counter)
+{
+	while(goingPosition>=counter)
+		nextTurn();
+}
+}

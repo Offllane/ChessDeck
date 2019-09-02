@@ -40,14 +40,7 @@ for (let i = 0; i<takeLetter.length; i++)
 	span = document.createElement('span');
 	span.className="cell";
 	span.id=i;
-	// if ( i ==0 || (i-1)%2 == 1)
-	// {
-	// 	// span.innerHTML='<strong>'+helper+'</strong>' +". ";
-	// 	span.innerHTML+=putLetter[i]+putNumber[i];
-	// 	helper++;
-	// }
-	// else
-	span.innerHTML=putLetter[i]+putNumber[i]+'   ';
+	span.innerHTML='<span onclick="GoToTurn('+i+')" class="pointer">'+putLetter[i]+putNumber[i]+'   '+'</span>';
 	document.getElementById('field').appendChild(span);
 	if (i == 6 || i == 8)
 		span.innerHTML+=" commentscommentscommentscommentscommentscomments";
