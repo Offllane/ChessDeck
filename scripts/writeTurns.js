@@ -1,6 +1,6 @@
 let figure_memory = [];
 
-function checkWrite(figure)
+function checkWrite(figure) //convert figure class to name of turn
 {
 	if(figure == 'figure_none')
 		return('figure_none');
@@ -35,32 +35,32 @@ function checkWrite(figure)
 var span;
 let helper = 1;
 
-for (let i = 0; i<takeLetter.length; i++)
+for (let i = 0; i<takeLetter.length; i++) //write turns
 {
 	span = document.createElement('span');
 	span.className="cell";
 	span.id=i;
-	span.innerHTML='<span onclick="GoToTurn('+i+')" class="pointer">'+putLetter[i]+putNumber[i]+'   '+'</span>';
+	span.innerHTML='<span onclick="GoToTurn('+i+')" class="pointer">'+putLetter[i]+putNumber[i]+'   '+'</span>'; // add tegs to html doc
 	document.getElementById('field').appendChild(span);
-	if (i == 6 || i == 8)
+	if (i == 6 || i == 8) //turns number for coments, you can use more if
 		span.innerHTML+=" commentscommentscommentscommentscommentscomments";
 }
 
 goEnd();
 begin();
 
-function changeColor(current)
+function changeColor(current) // change color to grey
 {
 	for(let j=0; j<takeLetter.length; j++)
 	{
 		if(j == (current-1) || j == (current+1))
-			document.getElementById(j).classList.remove('position');
+			document.getElementById(j).classList.remove('position'); // class posirion has grey color
 		if(j == current)
 			document.getElementById(j).classList.add('position');
 	}
 }
 
-for (let j = 0; j<figure_memory.length; j++)
+for (let j = 0; j<figure_memory.length; j++) // send data to html doc
 {
 	let rename;
 	rename = checkWrite(figure_memory[j]);

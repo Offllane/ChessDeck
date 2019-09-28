@@ -1,4 +1,4 @@
-function setBlackBishop()
+function setBlackBishop() // all of this functions found needed field and set figure by function name
  {
 	for(let i=0; i<excel.length; i++)
 	{
